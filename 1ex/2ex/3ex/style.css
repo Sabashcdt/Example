@@ -1,0 +1,337 @@
+/* Basic Reset and Setup */
+:root {
+    --primary-green: #38761d;
+    --light-green: #a7d9b9;
+    --background-pink: #fbe5e5;
+    --background-green-dots: #d8f3dc;
+    --text-dark: #333;
+    --text-light: #555;
+    --font-script: 'Dancing Script', cursive;
+    --font-main: Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: #f7f7f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background Shapes (Simplified) */
+body::before, body::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+body::before {
+    top: -50px;
+    left: -50px;
+    width: 250px;
+    height: 250px;
+    background: var(--background-pink);
+    opacity: 0.6;
+    transform: rotate(45deg);
+}
+
+body::after {
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: var(--background-green-dots);
+    opacity: 0.8;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tagline {
+    color: var(--primary-green);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: var(--primary-green);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.header h1::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 60%;
+    height: 3px;
+    background-color: var(--light-green);
+    transform: translateX(-50%) skewX(-20deg);
+}
+
+/* Main Container - Flex Layout */
+.container {
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--text-dark);
+    padding: 15px 0;
+    text-align: center;
+}
+
+.contact-us {
+    order: 2; /* To match the 'contact us' positioning in the image */
+}
+
+/* --- Left Side: Booking Form --- */
+.form-container {
+    flex: 1.2;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-card {
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.booking-script {
+    font-family: var(--font-script);
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--primary-green);
+}
+
+/* Form Styling */
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 1em;
+    transition: border-bottom-color 0.3s;
+    -webkit-appearance: none; /* Remove default styling for select/date */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+    outline: none;
+    border-bottom-color: var(--primary-green);
+}
+
+.input-group textarea {
+    resize: none;
+    height: 100px;
+    padding-top: 5px;
+}
+
+/* Icon Inputs */
+.icon-input {
+    display: flex;
+    align-items: center;
+}
+
+.icon-input input {
+    flex-grow: 1;
+}
+
+.input-icon {
+    position: absolute;
+    right: 10px;
+    color: var(--primary-green);
+    font-size: 1.1em;
+    pointer-events: none; /* Allows click-through to input */
+}
+
+.input-group select {
+    padding-right: 35px; /* Make space for the icon */
+    cursor: pointer;
+}
+
+.select-group {
+    position: relative;
+}
+
+.dropdown-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-green);
+    pointer-events: none;
+}
+
+/* Specific adjustments for Venue/Location with icon */
+#location {
+    padding-left: 30px; /* Space for the map icon */
+}
+
+.input-group.select-group .input-icon {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    right: auto;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 40%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-green);
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 30px auto 0;
+}
+
+.submit-btn:hover {
+    background-color: #1d4d0b;
+}
+
+/* --- Right Side: Contact Information --- */
+.contact-container {
+    flex: 1;
+    background-color: var(--background-green-dots);
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info {
+    order: 1; /* To match the 'contact us' positioning in the image */
+    margin-bottom: 20px;
+}
+
+.contact-info h3 {
+    color: var(--primary-green);
+    font-size: 1.8em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.contact-info p {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.contact-details h4 {
+    color: var(--primary-green);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-details p {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.address {
+    margin-top: 10px;
+}
+
+/* Map Section */
+.map-section {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 200px; /* Map height */
+    border-radius: 5px;
+}
+
+.map-infographic {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.map-infographic p:first-child {
+    font-weight: bold;
+    font-size: 0.8em;
+    color: var(--text-dark);
+}
+
+.map-text {
+    font-size: 0.7em;
+    color: var(--text-light);
+    margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 850px) {
+    .container {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .form-container, .contact-container {
+        padding: 20px;
+    }
+
+    .contact-us {
+        order: 1;
+    }
+
+    .contact-info {
+        order: 2;
+    }
+}
+
+@media (max-width: 500px) {
+    .header h1 {
+        font-size: 2em;
+    }
+}

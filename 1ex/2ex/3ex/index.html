@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <p class="tagline">Tell us about your event, and we'll make it unforgettable</p>
+        <h1>Book Your Event Now</h1>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <h2 class="section-title">Booking Form</h2>
+            <div class="booking-card">
+                <p class="booking-script">Are You Booking?</p>
+                <form action="#" method="POST">
+                    <div class="input-group">
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" id="mobile" name="mobile" placeholder="Mobile No" required>
+                    </div>
+                    <div class="input-group select-group">
+                        <select id="event-type" name="event-type" required>
+                            <option value="" disabled selected>Event Type</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="birthday">Birthday Party</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <i class="fas fa-caret-down dropdown-icon"></i>
+                    </div>
+                    <div class="input-group icon-input">
+                        <input type="text" id="date-time" name="date-time" placeholder="Event Date & Time" onfocus="(this.type='datetime-local')" onblur="if(!this.value)this.type='text'" required>
+                        <i class="fas fa-calendar-alt input-icon"></i>
+                    </div>
+                    <div class="input-group icon-input select-group">
+                         <select id="location" name="location" required>
+                            <option value="" disabled selected>Venue / Location</option>
+                            <option value="vaniyambadi">Vaniyambadi</option>
+                            <option value="tirupattur">Tirupattur</option>
+                            <option value="ambur">Ambur</option>
+                            <option value="bargur">Bargur</option>
+                        </select>
+                        <i class="fas fa-map-marker-alt input-icon"></i>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" name="message" placeholder="Message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Book Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="contact-container">
+            <h2 class="section-title contact-us">Contact Us</h2>
+            <div class="contact-info">
+                <h3>Get in Touch.</h3>
+                <p>We're happy to answer your questions anytime!</p>
+                <div class="contact-details">
+                    <h4>Contact Information</h4>
+                    <p><strong>Phone:</strong> +91 2345678977</p>
+                    <p><strong>Email:</strong> example123@gmail.com</p>
+                    <p class="address">123 Anna Nager Street, Tirupattur dt & talk,<br>Tamil Nadu, India, Pincode: 635 601.</p>
+                </div>
+            </div>
+            
+            <div class="map-section">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15582.493863456385!2d78.5492497!3d12.2359419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac44f808722a01%3A0x868b209d66144e05!2sTirupattur%2C%20Tamil%20Nadu%20635601!5e0!3m2!1sen!2sin!4v1625400000000!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="200" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+                <div class="map-infographic">
+                    <p>WORLD MAP INFOGRAPHIC</p>
+                    <p class="map-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
